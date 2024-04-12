@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePersonasTable extends Migration
+class CreateEmpresasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreatePersonasTable extends Migration
      */
     public function up()
     {
-        Schema::create('personas', function (Blueprint $table) {
+        Schema::create('empresas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->nullable();
+            $table->string('razonSocial')->nullable();
             $table->integer('tipoDocumento')->nullable();
             $table->string('numeroDocumento', 25)->nullable();
             $table->string('estado', 25)->nullable();
-            $table->string('condicion', 45)->nullable();
+            $table->string('condicion', 75)->nullable();
             $table->string('direccion')->nullable();
             $table->string('ubigeo', 10)->nullable();
             $table->string('viaTipo', 25)->nullable();
-            $table->string('viaNombre', 100)->nullable();
+            $table->string('viaNombre', 45)->nullable();
             $table->string('zonaCodigo', 25)->nullable();
             $table->string('zonaTipo', 25)->nullable();
             $table->integer('numero')->nullable();
@@ -35,11 +35,13 @@ class CreatePersonasTable extends Migration
             $table->string('distrito', 45)->nullable();
             $table->string('provincia', 45)->nullable();
             $table->string('departamento', 45)->nullable();
-            $table->string('nombres', 75)->nullable();
-            $table->string('apellidoPaterno', 75)->nullable();
-            $table->string('apellidoMaterno', 75)->nullable();
-            $table->date('fechaNacimiento')->nullable();
-            $table->string('sexo', 1)->nullable();
+            $table->string('EsAgenteRetencion', 45)->nullable();
+            $table->string('tipo', 45)->nullable();
+            $table->string('actividadEconomica')->nullable();
+            $table->integer('numeroTrabajadores')->nullable();
+            $table->string('tipoFacturacion', 45)->nullable();
+            $table->string('tipoContabilidad', 45)->nullable();
+            $table->string('comercioExterior', 75)->nullable();
             $table->timestamps();
         });
     }
@@ -51,6 +53,6 @@ class CreatePersonasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personas');
+        Schema::dropIfExists('empresas');
     }
 }
