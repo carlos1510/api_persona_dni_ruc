@@ -38,8 +38,10 @@ PASOS
     DB_PASSWORD=
 
     EJECUTAMOS LAS MIGRACIONES PARA LA CREACION DE LAS TABLAS
-    
+
     php artisan migrate
+    
+    o
 
     php artisan migrate --seed
 
